@@ -31,14 +31,17 @@ namespace ProjetBobines.Filters
                 {
                     using (var context = new UsersContext())
                     {
-                        if (!context.Database.Exists())
-                        {
-                            // Créer la base de données SimpleMembership sans schéma de migration Entity Framework
-                            ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
-                        }
+                        // GM car la bdd n est pas celle cree automatiquement
+                        //if (!context.Database.Exists())
+                        //{
+                        //    // Créer la base de données SimpleMembership sans schéma de migration Entity Framework
+                        //    ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
+                        //}
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+//                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DataWareHouse", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+
                 }
                 catch (Exception ex)
                 {

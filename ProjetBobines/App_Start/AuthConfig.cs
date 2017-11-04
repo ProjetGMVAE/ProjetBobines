@@ -16,7 +16,7 @@ namespace ProjetBobines
 
             //OAuthWebSecurity.RegisterMicrosoftClient(
             //    clientId: "",
-            //    clientSecret: "");
+            //    clientSecret: ""); 
 
             //OAuthWebSecurity.RegisterTwitterClient(
             //    consumerKey: "",
