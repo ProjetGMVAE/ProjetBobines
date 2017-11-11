@@ -1,0 +1,158 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c5b46492-9a8d-4ee7-922b-9c5eb4abde6c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DimHalle</ID>
+  <Name>DimHalle</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="bf5ccedd-66c1-4c2c-9d00-7bd0a37af7f8">
+    <DataSourceViewID>StockProduit</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="39db708b-bbb9-4018-971d-12d6b694af87">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="151a985b-4edd-486b-86c6-671612f489ee">
+      <ID>Id Halle</ID>
+      <Name>Id Halle</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1740c444-8ff7-4c1e-939f-b8f9efbd3b12">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d307e3d0-40b0-40fd-81e1-a274870a36ec">
+            <TableID>dbo_DimHalle</TableID>
+            <ColumnID>IdHalle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ab349539-8c01-44c1-a7b5-49c43d35436d">
+          <AttributeID>Halle</AttributeID>
+          <Name>Halle</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="45a0d2dc-2c24-49a5-9fe9-8b9a0d213d0a">
+          <AttributeID>Parc</AttributeID>
+          <Name>Parc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f7221e64-d3b0-471b-827a-e75ee3362ef7">
+          <AttributeID>Pos X</AttributeID>
+          <Name>Pos X</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1e4fc799-ba6b-4996-9112-2719ac6689e2">
+          <AttributeID>Pos Y</AttributeID>
+          <Name>Pos Y</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f1e6fb8f-4b34-4d60-adfc-bf179589ce20">
+      <ID>Halle</ID>
+      <Name>Halle</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8c01f620-4223-47ae-8cc3-b2b207aad292">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ec2dd070-6cf8-4474-8e88-9247e10f2006">
+            <TableID>dbo_DimHalle</TableID>
+            <ColumnID>Halle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="692e340a-1af7-4085-8baa-e5a6b24f74aa">
+      <ID>Parc</ID>
+      <Name>Parc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="478b858f-289b-46c8-9f91-cb83f7be6784">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0d955961-4e64-474b-ac0e-3f78201fd576">
+            <TableID>dbo_DimHalle</TableID>
+            <ColumnID>Parc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e9e867de-b5fa-41d9-8d34-935a48ae5345">
+      <ID>Pos X</ID>
+      <Name>Pos X</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48d49c13-a61c-40ff-be9d-90cbbf444288">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3f4be0a9-018c-4db8-933c-e280534eacce">
+            <TableID>dbo_DimHalle</TableID>
+            <ColumnID>PosX</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b39b87b1-285b-4fa1-b405-2a50b454a556">
+      <ID>Pos Y</ID>
+      <Name>Pos Y</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7b2585f2-a4db-4947-aa16-66baa27c52c7">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3abb14b3-f5a2-4efe-9d92-0ac9bf77d511">
+            <TableID>dbo_DimHalle</TableID>
+            <ColumnID>PosY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -6,10 +6,50 @@
     <Name>ProjetBobinesPMD.database</Name>
     <FullPath>ProjetBobinesPMD.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>StockProduit.cube</Name>
+      <FullPath>StockProduit.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>StockProduit.partitions</Name>
+          <FullPath>StockProduit.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>DimStockProduit.dim</Name>
-      <FullPath>DimStockProduit.dim</FullPath>
+      <Name>DimProduit.dim</Name>
+      <FullPath>DimProduit.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Heure.dim</Name>
+      <FullPath>Heure.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DimClient.dim</Name>
+      <FullPath>DimClient.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DimHalle.dim</Name>
+      <FullPath>DimHalle.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Date Temporelle.dim</Name>
+      <FullPath>Date Temporelle.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Halle.dim</Name>
+      <FullPath>Halle.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Produit.dim</Name>
+      <FullPath>Produit.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Client.dim</Name>
+      <FullPath>Client.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -22,6 +62,10 @@
     <ProjectItem>
       <Name>StockProduit.dsv</Name>
       <FullPath>StockProduit.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ProjetBobinesPMD.dsv</Name>
+      <FullPath>ProjetBobinesPMD.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>
@@ -42,6 +86,7 @@
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
+        <DeploymentServerVersion>11.0</DeploymentServerVersion>
       </Options>
     </Configuration>
   </Configurations>
