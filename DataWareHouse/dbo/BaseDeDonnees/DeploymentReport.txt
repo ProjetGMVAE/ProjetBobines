@@ -1,0 +1,23 @@
+﻿** Met en surbrillance
+     Tables à reconstruire
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Créer
+       [dbo].[DimClient] (Table)
+       [dbo].[DimDateTemporelle] (Table)
+       [dbo].[DimHalle] (Table)
+       [dbo].[DimProduit] (Table)
+       [dbo].[FactStockProduit] (Table)
+       [dbo].[FK_FactStockProduit_DimClient] (Clé étrangère)
+       [dbo].[FK_FactStockProduit_DimDateTemporelle] (Clé étrangère)
+       [dbo].[FK_FactStockProduit_DimHalle] (Clé étrangère)
+       [dbo].[FK_FactStockProduit_DimProduit] (Clé étrangère)
+
+** Actions de support

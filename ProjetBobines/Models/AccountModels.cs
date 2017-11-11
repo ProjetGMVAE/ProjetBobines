@@ -11,7 +11,7 @@ namespace ProjetBobines.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DataWareHouse") //base("DefaultConnection")
+            : base("DataWareHouse")
         {
         }
 
