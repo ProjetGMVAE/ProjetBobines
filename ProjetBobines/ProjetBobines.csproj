@@ -267,7 +267,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Documents\Dossier Projet VAE Gaetan Manier.docx" />
     <None Include="Properties\PublishProfiles\ProjetBobines.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
