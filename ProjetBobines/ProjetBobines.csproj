@@ -15,7 +15,7 @@
     <AssemblyName>ProjetBobines</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -35,7 +35,7 @@
     <PublishDatabaseSettings>
       <Objects>
         <ObjectGroup Name="AccesBdd" Order="1" xmlns="">
-          <Destination Path="Data Source=PC-AIMK-DEV-GM\SQLEXPRESS%3bInitial Catalog=DataWareHouse%3bIntegrated Security=True%3bConnect Timeout=30" />
+          <Destination Path="Data Source=PC-AIMK-DEV-GM\SQLSRVGAE%3bInitial Catalog=DataWareHouse%3bIntegrated Security=True%3bConnect Timeout=30" />
           <Object Type="DbFullSql" Enabled="False">
             <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bInitial Catalog=DataWareHouse%3bUser ID=ConnexionDWH%3bPassword=ConnexionDWH%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
             <Source Path="obj\Debug\AutoScripts\AccesBdd_SchemaOnly.sql" Transacted="True" />
@@ -58,7 +58,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -198,11 +201,31 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProduitsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\DimProduit.cs">
+      <DependentUpon>Produit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Produit.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Produit.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Produit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Produit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Produit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Produit.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -267,6 +290,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\Produit.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Produit.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Produit.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Produit.edmx</DependentUpon>
+      <LastGenOutput>Produit.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Produit.edmx.diagram">
+      <DependentUpon>Produit.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Produit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Produit.edmx</DependentUpon>
+      <LastGenOutput>Produit.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\ProjetBobines.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -283,6 +323,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Produits\ProduitsConsultation.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -334,6 +375,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -352,7 +397,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49972</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/ProjetBobines</IISUrl>
+          <IISUrl>http://localhost:49972/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

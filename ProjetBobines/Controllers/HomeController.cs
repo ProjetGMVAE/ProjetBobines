@@ -10,7 +10,7 @@ namespace ProjetBobines.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = " Application Consultation Bobines";
 
             return View();
         }
@@ -26,6 +26,16 @@ namespace ProjetBobines.Controllers
         {
             ViewBag.Message = " Gaetan Manier";
 
+            return View();
+        }
+
+        public ActionResult ProduitsConsultation()
+        {
+            return View();
+        }
+
+        public ActionResult ProduitsConsultation2()
+        {
             return View();
         }
     }
