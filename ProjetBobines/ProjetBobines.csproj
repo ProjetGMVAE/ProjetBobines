@@ -324,6 +324,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\Produits\ProduitsConsultation.aspx" />
+    <Content Include="Views\Produits\ProduitsConsultation2.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -12,7 +12,7 @@
     <%: Html.ActionLink("Create New", "Create") %>
 </p>
 
-    <style type="text/css">
+<style type="text/css">
 table
 {
      border-collapse:collapse;
