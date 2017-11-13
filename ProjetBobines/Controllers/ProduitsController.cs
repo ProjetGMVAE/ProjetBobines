@@ -10,6 +10,7 @@ namespace ProjetBobines.Controllers
     public class ProduitsController : Controller
     {
         DataWareHouseEntities _db;
+        static List<DimProduit> produit = new List<DimProduit>();
 
         public ProduitsController()
         {
@@ -29,54 +30,64 @@ namespace ProjetBobines.Controllers
             return View();
         }
 
-        public ActionResult Edit()
+        //[HttpPost]
+        public ActionResult Create(DimProduit p)
         {
-            ViewData.Model = _db.DimProduit.ToList();
-            return View();
-        }
-
-        public ActionResult Details()
-        {
-            ViewData.Model = _db.DimProduit.ToList();
-            return View();
-        }
-
-        public ActionResult Delete()
-        {
-            ViewData.Model = _db.DimProduit.ToList();
-            return View();
-        }
-        
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(FormCollection form)
-        {
-            var produitToAdd = new DimProduit();
-
-            // Désérialisation (Inclus une simple vide !)
-            TryUpdateModel(produitToAdd, new string[] { "Title", "Director" }, form.ToValueProvider());
-
-            // Validation
-            if (String.IsNullOrEmpty(produitToAdd.Produit))
-                ModelState.AddModelError("Produit", "Title is required!");
-            //if (String.IsNullOrEmpty(produitToAdd.Director))
-                ModelState.AddModelError("Director", "Director is required!");
-
-            // Si valide, sauvegarde le film dans la base de données
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-               // _db.DimProduit(produitToAdd);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+                return View("Create", p);
             }
 
-            // Sinon, réaffiche la page
-            return View(produitToAdd);
+            produit.Add(p);
+
+            return View(); //return RedirectToAction("Create");
         }
+
+        public ActionResult Edit(int id)
+        {
+            DimProduit p = new DimProduit();
+
+            foreach (DimProduit pn in _db.DimProduit.ToList())
+            {
+                if (pn.IdProduit == id)
+                {
+                    p.IdProduit = pn.IdProduit;
+                    p.Produit = pn.Produit;
+                    p.Type_Produit_ID = pn.Type_Produit_ID;
+                    p.Etat = pn.Etat;
+                    p.Longueur = pn.Longueur;
+                    p.Largeur = pn.Largeur;
+                    p.Date_Creation = pn.Date_Creation;
+                }
+            }
+
+            return View(p);
+        }
+
+        public ActionResult Details(DimProduit p)
+        {
+            return View(p);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            DimProduit p = new DimProduit();
+
+            foreach (DimProduit pn in _db.DimProduit.ToList())
+            {
+                if (pn.IdProduit == id)
+                {
+                    p.IdProduit = pn.IdProduit;
+                    p.Produit = pn.Produit;
+                    p.Type_Produit_ID = pn.Type_Produit_ID;
+                    p.Etat = pn.Etat;
+                }
+            }
+
+            return View(p);
+        }
+        
+
     }
     
    }

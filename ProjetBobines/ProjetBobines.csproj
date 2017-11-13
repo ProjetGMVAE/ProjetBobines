@@ -323,6 +323,10 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Produits\Create.aspx" />
+    <Content Include="Views\Produits\Delete.aspx" />
+    <Content Include="Views\Produits\Details.aspx" />
+    <Content Include="Views\Produits\Edit.aspx" />
     <Content Include="Views\Produits\ProduitsConsultation.aspx" />
     <Content Include="Views\Produits\ProduitsConsultation2.aspx" />
     <Content Include="Web.config" />

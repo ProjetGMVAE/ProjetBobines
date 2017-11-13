@@ -9,7 +9,7 @@
 <h2>Produits: Consultation</h2>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+    <%: Html.ActionLink("Create New", "Create", "Produits") %>
 </p>
 
     <style type="text/css">
@@ -76,7 +76,7 @@ table td, table th
         </td>
         <td>
             <%: Html.ActionLink("Edit", "Edit", new {  id=item.IdProduit  }) %> |
-            <%: Html.ActionLink("Details", "Details", new {  id=item.IdProduit  }) %> |
+            <%: Html.ActionLink("Details", "Details", item) %> |
             <%: Html.ActionLink("Delete", "Delete", new {  id=item.IdProduit  }) %>
         </td>
     </tr>
