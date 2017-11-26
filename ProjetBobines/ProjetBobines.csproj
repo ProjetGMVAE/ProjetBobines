@@ -201,6 +201,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProduitArchiController.cs" />
     <Compile Include="Controllers\ProduitsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -215,10 +216,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Produit.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Produit.cs">
+      <DependentUpon>ProduitArchi.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Produit.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Produit.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduitArchi.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProduitArchi.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduitArchi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProduitArchi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduitArchi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProduitArchi.edmx</DependentUpon>
     </Compile>
     <Compile Include="pp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -302,6 +321,24 @@
       <DependentUpon>Produit.edmx</DependentUpon>
       <LastGenOutput>Produit.cs</LastGenOutput>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="Models\ProduitArchi.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProduitArchi.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProduitArchi.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProduitArchi.edmx</DependentUpon>
+      <LastGenOutput>ProduitArchi.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProduitArchi.edmx.diagram">
+      <DependentUpon>ProduitArchi.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ProduitArchi.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProduitArchi.edmx</DependentUpon>
+      <LastGenOutput>ProduitArchi.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\ProjetBobines.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -318,6 +355,11 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\ProduitArchi\Create.aspx" />
+    <Content Include="Views\ProduitArchi\Delete.aspx" />
+    <Content Include="Views\ProduitArchi\Details.aspx" />
+    <Content Include="Views\ProduitArchi\Edit.aspx" />
+    <Content Include="Views\ProduitArchi\Index.aspx" />
     <Content Include="Views\Produits\Create.aspx" />
     <Content Include="Views\Produits\Delete.aspx" />
     <Content Include="Views\Produits\Details.aspx" />
@@ -367,7 +409,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ProduitArchi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

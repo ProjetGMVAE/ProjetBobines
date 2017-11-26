@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataWareHouseModelProduitArchi.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Produit">
+          <Key>
+            <PropertyRef Name="D_NUM_PRODUIT" />
+          </Key>
+          <Property Name="D_NUM_PRODUIT" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Type_Produit_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Etat" Type="varchar" MaxLength="20" />
+          <Property Name="Poids" Type="int" />
+          <Property Name="Largeur" Type="int" />
+          <Property Name="Longueur" Type="int" />
+          <Property Name="Epaisseur" Type="int" />
+          <Property Name="Diametre_Interieur" Type="int" />
+          <Property Name="Diametre_Exterieur" Type="int" />
+          <Property Name="Flux_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Date_Creation" Type="datetime" />
+          <Property Name="Date_Reception" Type="datetime" />
+          <Property Name="Date_Localisation" Type="datetime" />
+          <Property Name="Date_FinVie" Type="datetime" />
+          <Property Name="X_Pont" Type="int" />
+          <Property Name="Y_Pont" Type="int" />
+          <Property Name="Z_Pont" Type="int" />
+          <Property Name="X_Calcule" Type="int" />
+          <Property Name="Y_Calcule" Type="int" />
+          <Property Name="Z_Calcule" Type="int" />
+          <Property Name="Hall_ID" Type="varchar" MaxLength="10" />
+          <Property Name="ZL_ID" Type="varchar" MaxLength="20" />
+          <Property Name="ZS_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Emplacement_ID" Type="int" />
+          <Property Name="Rang" Type="int" />
+          <Property Name="CM_ID" Type="varchar" MaxLength="20" />
+          <Property Name="Berce_ID" Type="int" />
+          <Property Name="Emplacement_ID_CM" Type="int" />
+          <Property Name="Localisation_Utilisateur" Type="varchar" MaxLength="20" />
+          <Property Name="Securite_Violee" Type="varchar" MaxLength="3" />
+          <Property Name="Commentaire_Localisation" Type="varchar" MaxLength="200" />
+          <Property Name="Qui_A_Localise" Type="varchar" MaxLength="80" />
+          <Property Name="Lot_MK" Type="int" />
+          <Property Name="Poste_Commande" Type="int" />
+          <Property Name="Stade_Elaboration" Type="varchar" MaxLength="10" />
+          <Property Name="Date_Coil_Froid" Type="datetime" />
+          <Property Name="Etat_UM" Type="varchar" MaxLength="5" />
+          <Property Name="Dernier_Code_Decision" Type="int" />
+          <Property Name="Code_Defaut_Principal" Type="varchar" MaxLength="3" />
+          <Property Name="Numero_Montage" Type="int" />
+          <Property Name="Numero_Montage_Previsionnel" Type="int" />
+          <Property Name="Date_Pass_Prev_Out_Suiv" Type="datetime" />
+          <Property Name="Code_Client_Destinataire_Livra" Type="int" />
+          <Property Name="Client_Destinataire_Livraison" Type="varchar" MaxLength="14" />
+          <Property Name="Code_Client_Destinataire_Techn" Type="int" />
+          <Property Name="Client_Destinataire_Technique" Type="varchar" MaxLength="14" />
+          <Property Name="Code_Client_Utilisateur" Type="int" />
+          <Property Name="Client_Utilisateur" Type="varchar" MaxLength="14" />
+          <Property Name="Halle_Montataire" Type="varchar" MaxLength="3" />
+          <Property Name="Top_Emballage" Type="varchar" MaxLength="3" />
+          <Property Name="Qualite_Metal" Type="varchar" MaxLength="4" />
+          <Property Name="Date_Entree_Magasin" Type="datetime" />
+          <Property Name="Date_Sortie_Magasin" Type="datetime" />
+          <Property Name="Date_Remise_Fabrication" Type="datetime" />
+          <Property Name="Date_Chargement" Type="datetime" />
+          <Property Name="Date_Expedition" Type="datetime" />
+          <Property Name="Date_Inventaire" Type="datetime" />
+          <Property Name="Delai_Expedition_Previsionnel" Type="datetime" />
+          <Property Name="Numero_Instruction" Type="int" />
+          <Property Name="Type_Instruction" Type="varchar" MaxLength="14" />
+          <Property Name="Date_Chargement_Plus_Tot" Type="datetime" />
+          <Property Name="Date_Chargement_Plus_Tard" Type="datetime" />
+          <Property Name="Date_Livraison_Imperative" Type="datetime" />
+          <Property Name="Urgence_Instruction" Type="varchar" MaxLength="10" />
+          <Property Name="Date_Urgence_Rouge" Type="datetime" />
+          <Property Name="Famille_Emballage" Type="varchar" MaxLength="4" />
+          <Property Name="Code_Emballage" Type="varchar" MaxLength="6" />
+          <Property Name="Code_Prestataire" Type="varchar" MaxLength="2" />
+          <Property Name="Mode_Expedition" Type="varchar" MaxLength="10" />
+          <Property Name="Nuance_Acier" Type="varchar" MaxLength="5" />
+          <Property Name="Diametre_Exterieur_Theorique" Type="int" />
+          <Property Name="Poids_Theorique" Type="int" />
+          <Property Name="Ticket_Bascule" Type="varchar" MaxLength="6" />
+          <Property Name="Longueur_Paquet" Type="int" />
+          <Property Name="Nombre_Feuille_Barre" Type="int" />
+          <Property Name="Indicateur_HR_THR" Type="varchar" MaxLength="1" />
+          <Property Name="Outil_Precedent" Type="varchar" MaxLength="5" />
+          <Property Name="Outil_Suivant" Type="varchar" MaxLength="5" />
+          <Property Name="Halle_ID_Destination" Type="varchar" MaxLength="10" />
+          <Property Name="Urgence_Transport_CID_GPO" Type="varchar" MaxLength="1" />
+          <Property Name="Halle_OG" Type="varchar" MaxLength="2" />
+          <Property Name="Localisation_OG" Type="varchar" MaxLength="20" />
+          <Property Name="Gerbabilite_Matiere" Type="varchar" MaxLength="3" />
+          <Property Name="Indicateur_Expediabilite" Type="varchar" MaxLength="3" />
+          <Property Name="UM_Huilee" Type="varchar" MaxLength="3" />
+          <Property Name="Outil_Suivant_nplus1" Type="varchar" MaxLength="5" />
+          <Property Name="Urgence_Expedition" Type="varchar" MaxLength="10" />
+          <Property Name="CodeProduit" Type="int" />
+          <Property Name="Motif_Securite_Violee" Type="varchar" MaxLength="100" />
+          <Property Name="DemandeDeDelestage" Type="varchar" MaxLength="3" />
+          <Property Name="Localisation_Pour_OG" Type="varchar" MaxLength="20" />
+          <Property Name="Date_Passage_Outil_Suivant" Type="datetime" />
+          <Property Name="Hauteur" Type="int" />
+          <Property Name="Gerbabilite_Autorisee" Type="varchar" MaxLength="3" />
+          <Property Name="X_Min_Occupation_Produit" Type="int" />
+          <Property Name="X_Max_Occupation_Produit" Type="int" />
+          <Property Name="Y_Min_Occupation_Produit" Type="int" />
+          <Property Name="Y_Max_Occupation_Produit" Type="int" />
+          <Property Name="X_Min_Zone_Securite" Type="int" />
+          <Property Name="X_Max_Zone_Securite" Type="int" />
+          <Property Name="Y_Min_Zone_Securite" Type="int" />
+          <Property Name="Y_Max_Zone_Securite" Type="int" />
+          <Property Name="X_Min_Zone_Accessibilite" Type="int" />
+          <Property Name="X_Max_Zone_Accessibilite" Type="int" />
+          <Property Name="Y_Min_Zone_Accessibilite" Type="int" />
+          <Property Name="Y_Max_Zone_Accessibilite" Type="int" />
+          <Property Name="Urgence_Local_Flux" Type="varchar" MaxLength="3" />
+          <Property Name="Hall_ID_Flux_Majeur" Type="varchar" MaxLength="10" />
+          <Property Name="Hall_ID_Flux_Mineur" Type="varchar" MaxLength="10" />
+          <Property Name="ZL_ID_Flux_Majeur" Type="varchar" MaxLength="20" />
+          <Property Name="ZL_ID_Flux_Mineur" Type="varchar" MaxLength="20" />
+          <Property Name="Date_Execution_Demandee_Flux" Type="datetime" />
+          <Property Name="Hall_ID_Delestage" Type="varchar" MaxLength="10" />
+          <Property Name="Date_Execution_Demandee_Delest" Type="datetime" />
+          <Property Name="Hall_ID_Rapprochement" Type="varchar" MaxLength="10" />
+          <Property Name="Date_Execution_Demandee_Rappro" Type="datetime" />
+          <Property Name="TGV" Type="varchar" MaxLength="3" />
+          <Property Name="Emballage_Direct" Type="varchar" MaxLength="3" />
+          <Property Name="Poids_Bascule" Type="int" />
+          <Property Name="DH_Derniere_Reception_Fiche" Type="datetime" />
+          <Property Name="Anomalie_OG" Type="varchar" MaxLength="55" />
+          <Property Name="DH_Inventaire" Type="datetime" />
+          <Property Name="LigneMontataire" Type="varchar" MaxLength="1" />
+          <Property Name="DH_Produit_Froid" Type="datetime" />
+          <Property Name="Type_Produit_Final" Type="varchar" MaxLength="2" />
+          <Property Name="Origine_Exterieure" Type="varchar" MaxLength="2" />
+          <Property Name="DH_Donnees_OG" Type="datetime" />
+          <Property Name="DH_Reception_Emission_Amont" Type="datetime" />
+          <Property Name="DH_Reception_Emission_Aval" Type="datetime" />
+          <Property Name="Nombre_Fiche_Identique" Type="int" />
+          <Property Name="Parc" Type="varchar" MaxLength="5" />
+          <Property Name="Urgence_Antares" Type="varchar" MaxLength="1" />
+          <Property Name="Indicateur_Emballabilite" Type="varchar" MaxLength="3" />
+          <Property Name="Indicateur_Itochu" Type="varchar" MaxLength="3" />
+          <Property Name="DH_Prev_Ent_Mag" Type="datetime" />
+          <Property Name="Indicateur_Cmd_Essai" Type="varchar" MaxLength="3" />
+          <Property Name="Indicateur_Def_Manu_DH_Prev_En" Type="varchar" MaxLength="3" />
+          <Property Name="Auteur_Def_Manu_DH_Prev_Ent_Ma" Type="varchar" MaxLength="50" />
+          <Property Name="Indicateur_Produit_Emballe" Type="varchar" MaxLength="3" />
+          <Property Name="Auteur_Dmd_Urgence_Flux" Type="varchar" MaxLength="50" />
+          <Property Name="Forcage_Emission_Fiche" Type="varchar" MaxLength="3" />
+          <Property Name="Demande_Rep_Deballage" Type="varchar" MaxLength="3" />
+          <Property Name="Type_Rep_Deballage" Type="varchar" MaxLength="5" />
+          <Property Name="Axe" Type="varchar" MaxLength="1" />
+          <Property Name="Choix" Type="int" />
+          <Property Name="LOK" Type="varchar" MaxLength="1" />
+          <Property Name="Nom_Principal_Colis" Type="varchar" MaxLength="20" />
+          <Property Name="UM" Type="varchar" MaxLength="200" />
+          <Property Name="Axe_Client" Type="varchar" MaxLength="1" />
+          <Property Name="Indicateur_Non_Derive" Type="varchar" MaxLength="1" />
+          <Property Name="Dernier_Outil" Type="varchar" MaxLength="5" />
+          <Property Name="DH_Sortie_Dernier_Outil" Type="datetime" />
+          <Property Name="Indicateur_Reetiquetage" Type="varchar" MaxLength="3" />
+          <Property Name="DH_Dmd_Reetiquetage" Type="datetime" />
+          <Property Name="AuteurUrgenceFlux" Type="varchar" MaxLength="50" />
+          <Property Name="DHUrgenceFlux" Type="datetime" />
+          <Property Name="ZL_IdDestinationHalleMajeur" Type="varchar" MaxLength="20" />
+          <Property Name="Date_Pass_Prev_Out_Suiv_OG" Type="datetime" />
+          <Property Name="Indicateur_Def_Manu_Date_Passa" Type="varchar" MaxLength="3" />
+          <Property Name="Auteur_Def_Manu_Date_Passage_P" Type="varchar" MaxLength="50" />
+          <Property Name="NumPlan" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="DataWareHouseModelProduitArchiStoreContainer">
+          <EntitySet Name="Produit" EntityType="Self.Produit" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataWareHouseModelProduitArchi" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Produit">
+          <Key>
+            <PropertyRef Name="D_NUM_PRODUIT" />
+          </Key>
+          <Property Name="D_NUM_PRODUIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_Produit_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Etat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Poids" Type="Int32" />
+          <Property Name="Largeur" Type="Int32" />
+          <Property Name="Longueur" Type="Int32" />
+          <Property Name="Epaisseur" Type="Int32" />
+          <Property Name="Diametre_Interieur" Type="Int32" />
+          <Property Name="Diametre_Exterieur" Type="Int32" />
+          <Property Name="Flux_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Creation" Type="DateTime" Precision="3" />
+          <Property Name="Date_Reception" Type="DateTime" Precision="3" />
+          <Property Name="Date_Localisation" Type="DateTime" Precision="3" />
+          <Property Name="Date_FinVie" Type="DateTime" Precision="3" />
+          <Property Name="X_Pont" Type="Int32" />
+          <Property Name="Y_Pont" Type="Int32" />
+          <Property Name="Z_Pont" Type="Int32" />
+          <Property Name="X_Calcule" Type="Int32" />
+          <Property Name="Y_Calcule" Type="Int32" />
+          <Property Name="Z_Calcule" Type="Int32" />
+          <Property Name="Hall_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ZL_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ZS_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Emplacement_ID" Type="Int32" />
+          <Property Name="Rang" Type="Int32" />
+          <Property Name="CM_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Berce_ID" Type="Int32" />
+          <Property Name="Emplacement_ID_CM" Type="Int32" />
+          <Property Name="Localisation_Utilisateur" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Securite_Violee" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Commentaire_Localisation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Qui_A_Localise" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Lot_MK" Type="Int32" />
+          <Property Name="Poste_Commande" Type="Int32" />
+          <Property Name="Stade_Elaboration" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Coil_Froid" Type="DateTime" Precision="3" />
+          <Property Name="Etat_UM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Dernier_Code_Decision" Type="Int32" />
+          <Property Name="Code_Defaut_Principal" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Numero_Montage" Type="Int32" />
+          <Property Name="Numero_Montage_Previsionnel" Type="Int32" />
+          <Property Name="Date_Pass_Prev_Out_Suiv" Type="DateTime" Precision="3" />
+          <Property Name="Code_Client_Destinataire_Livra" Type="Int32" />
+          <Property Name="Client_Destinataire_Livraison" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Code_Client_Destinataire_Techn" Type="Int32" />
+          <Property Name="Client_Destinataire_Technique" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Code_Client_Utilisateur" Type="Int32" />
+          <Property Name="Client_Utilisateur" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Halle_Montataire" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Top_Emballage" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Qualite_Metal" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Entree_Magasin" Type="DateTime" Precision="3" />
+          <Property Name="Date_Sortie_Magasin" Type="DateTime" Precision="3" />
+          <Property Name="Date_Remise_Fabrication" Type="DateTime" Precision="3" />
+          <Property Name="Date_Chargement" Type="DateTime" Precision="3" />
+          <Property Name="Date_Expedition" Type="DateTime" Precision="3" />
+          <Property Name="Date_Inventaire" Type="DateTime" Precision="3" />
+          <Property Name="Delai_Expedition_Previsionnel" Type="DateTime" Precision="3" />
+          <Property Name="Numero_Instruction" Type="Int32" />
+          <Property Name="Type_Instruction" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Chargement_Plus_Tot" Type="DateTime" Precision="3" />
+          <Property Name="Date_Chargement_Plus_Tard" Type="DateTime" Precision="3" />
+          <Property Name="Date_Livraison_Imperative" Type="DateTime" Precision="3" />
+          <Property Name="Urgence_Instruction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Urgence_Rouge" Type="DateTime" Precision="3" />
+          <Property Name="Famille_Emballage" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Code_Emballage" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Code_Prestataire" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Mode_Expedition" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Nuance_Acier" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Diametre_Exterieur_Theorique" Type="Int32" />
+          <Property Name="Poids_Theorique" Type="Int32" />
+          <Property Name="Ticket_Bascule" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Longueur_Paquet" Type="Int32" />
+          <Property Name="Nombre_Feuille_Barre" Type="Int32" />
+          <Property Name="Indicateur_HR_THR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Outil_Precedent" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Outil_Suivant" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Halle_ID_Destination" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Urgence_Transport_CID_GPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Halle_OG" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Localisation_OG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Gerbabilite_Matiere" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Indicateur_Expediabilite" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="UM_Huilee" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Outil_Suivant_nplus1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Urgence_Expedition" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CodeProduit" Type="Int32" />
+          <Property Name="Motif_Securite_Violee" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DemandeDeDelestage" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Localisation_Pour_OG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Passage_Outil_Suivant" Type="DateTime" Precision="3" />
+          <Property Name="Hauteur" Type="Int32" />
+          <Property Name="Gerbabilite_Autorisee" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="X_Min_Occupation_Produit" Type="Int32" />
+          <Property Name="X_Max_Occupation_Produit" Type="Int32" />
+          <Property Name="Y_Min_Occupation_Produit" Type="Int32" />
+          <Property Name="Y_Max_Occupation_Produit" Type="Int32" />
+          <Property Name="X_Min_Zone_Securite" Type="Int32" />
+          <Property Name="X_Max_Zone_Securite" Type="Int32" />
+          <Property Name="Y_Min_Zone_Securite" Type="Int32" />
+          <Property Name="Y_Max_Zone_Securite" Type="Int32" />
+          <Property Name="X_Min_Zone_Accessibilite" Type="Int32" />
+          <Property Name="X_Max_Zone_Accessibilite" Type="Int32" />
+          <Property Name="Y_Min_Zone_Accessibilite" Type="Int32" />
+          <Property Name="Y_Max_Zone_Accessibilite" Type="Int32" />
+          <Property Name="Urgence_Local_Flux" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Hall_ID_Flux_Majeur" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Hall_ID_Flux_Mineur" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ZL_ID_Flux_Majeur" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ZL_ID_Flux_Mineur" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Execution_Demandee_Flux" Type="DateTime" Precision="3" />
+          <Property Name="Hall_ID_Delestage" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Execution_Demandee_Delest" Type="DateTime" Precision="3" />
+          <Property Name="Hall_ID_Rapprochement" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Execution_Demandee_Rappro" Type="DateTime" Precision="3" />
+          <Property Name="TGV" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Emballage_Direct" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Poids_Bascule" Type="Int32" />
+          <Property Name="DH_Derniere_Reception_Fiche" Type="DateTime" Precision="3" />
+          <Property Name="Anomalie_OG" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="DH_Inventaire" Type="DateTime" Precision="3" />
+          <Property Name="LigneMontataire" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DH_Produit_Froid" Type="DateTime" Precision="3" />
+          <Property Name="Type_Produit_Final" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Origine_Exterieure" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DH_Donnees_OG" Type="DateTime" Precision="3" />
+          <Property Name="DH_Reception_Emission_Amont" Type="DateTime" Precision="3" />
+          <Property Name="DH_Reception_Emission_Aval" Type="DateTime" Precision="3" />
+          <Property Name="Nombre_Fiche_Identique" Type="Int32" />
+          <Property Name="Parc" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Urgence_Antares" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Indicateur_Emballabilite" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Indicateur_Itochu" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="DH_Prev_Ent_Mag" Type="DateTime" Precision="3" />
+          <Property Name="Indicateur_Cmd_Essai" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Indicateur_Def_Manu_DH_Prev_En" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Auteur_Def_Manu_DH_Prev_Ent_Ma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Indicateur_Produit_Emballe" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Auteur_Dmd_Urgence_Flux" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Forcage_Emission_Fiche" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Demande_Rep_Deballage" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Type_Rep_Deballage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Axe" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Choix" Type="Int32" />
+          <Property Name="LOK" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Nom_Principal_Colis" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Axe_Client" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Indicateur_Non_Derive" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Dernier_Outil" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="DH_Sortie_Dernier_Outil" Type="DateTime" Precision="3" />
+          <Property Name="Indicateur_Reetiquetage" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="DH_Dmd_Reetiquetage" Type="DateTime" Precision="3" />
+          <Property Name="AuteurUrgenceFlux" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DHUrgenceFlux" Type="DateTime" Precision="3" />
+          <Property Name="ZL_IdDestinationHalleMajeur" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Pass_Prev_Out_Suiv_OG" Type="DateTime" Precision="3" />
+          <Property Name="Indicateur_Def_Manu_Date_Passa" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Auteur_Def_Manu_Date_Passage_P" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumPlan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DataWareHouseEntitiesProduitArchi" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Produit" EntityType="Self.Produit" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataWareHouseModelProduitArchiStoreContainer" CdmEntityContainer="DataWareHouseEntitiesProduitArchi">
+          <EntitySetMapping Name="Produit">
+            <EntityTypeMapping TypeName="DataWareHouseModelProduitArchi.Produit">
+              <MappingFragment StoreEntitySet="Produit">
+                <ScalarProperty Name="D_NUM_PRODUIT" ColumnName="D_NUM_PRODUIT" />
+                <ScalarProperty Name="Type_Produit_ID" ColumnName="Type_Produit_ID" />
+                <ScalarProperty Name="Etat" ColumnName="Etat" />
+                <ScalarProperty Name="Poids" ColumnName="Poids" />
+                <ScalarProperty Name="Largeur" ColumnName="Largeur" />
+                <ScalarProperty Name="Longueur" ColumnName="Longueur" />
+                <ScalarProperty Name="Epaisseur" ColumnName="Epaisseur" />
+                <ScalarProperty Name="Diametre_Interieur" ColumnName="Diametre_Interieur" />
+                <ScalarProperty Name="Diametre_Exterieur" ColumnName="Diametre_Exterieur" />
+                <ScalarProperty Name="Flux_ID" ColumnName="Flux_ID" />
+                <ScalarProperty Name="Date_Creation" ColumnName="Date_Creation" />
+                <ScalarProperty Name="Date_Reception" ColumnName="Date_Reception" />
+                <ScalarProperty Name="Date_Localisation" ColumnName="Date_Localisation" />
+                <ScalarProperty Name="Date_FinVie" ColumnName="Date_FinVie" />
+                <ScalarProperty Name="X_Pont" ColumnName="X_Pont" />
+                <ScalarProperty Name="Y_Pont" ColumnName="Y_Pont" />
+                <ScalarProperty Name="Z_Pont" ColumnName="Z_Pont" />
+                <ScalarProperty Name="X_Calcule" ColumnName="X_Calcule" />
+                <ScalarProperty Name="Y_Calcule" ColumnName="Y_Calcule" />
+                <ScalarProperty Name="Z_Calcule" ColumnName="Z_Calcule" />
+                <ScalarProperty Name="Hall_ID" ColumnName="Hall_ID" />
+                <ScalarProperty Name="ZL_ID" ColumnName="ZL_ID" />
+                <ScalarProperty Name="ZS_ID" ColumnName="ZS_ID" />
+                <ScalarProperty Name="Emplacement_ID" ColumnName="Emplacement_ID" />
+                <ScalarProperty Name="Rang" ColumnName="Rang" />
+                <ScalarProperty Name="CM_ID" ColumnName="CM_ID" />
+                <ScalarProperty Name="Berce_ID" ColumnName="Berce_ID" />
+                <ScalarProperty Name="Emplacement_ID_CM" ColumnName="Emplacement_ID_CM" />
+                <ScalarProperty Name="Localisation_Utilisateur" ColumnName="Localisation_Utilisateur" />
+                <ScalarProperty Name="Securite_Violee" ColumnName="Securite_Violee" />
+                <ScalarProperty Name="Commentaire_Localisation" ColumnName="Commentaire_Localisation" />
+                <ScalarProperty Name="Qui_A_Localise" ColumnName="Qui_A_Localise" />
+                <ScalarProperty Name="Lot_MK" ColumnName="Lot_MK" />
+                <ScalarProperty Name="Poste_Commande" ColumnName="Poste_Commande" />
+                <ScalarProperty Name="Stade_Elaboration" ColumnName="Stade_Elaboration" />
+                <ScalarProperty Name="Date_Coil_Froid" ColumnName="Date_Coil_Froid" />
+                <ScalarProperty Name="Etat_UM" ColumnName="Etat_UM" />
+                <ScalarProperty Name="Dernier_Code_Decision" ColumnName="Dernier_Code_Decision" />
+                <ScalarProperty Name="Code_Defaut_Principal" ColumnName="Code_Defaut_Principal" />
+                <ScalarProperty Name="Numero_Montage" ColumnName="Numero_Montage" />
+                <ScalarProperty Name="Numero_Montage_Previsionnel" ColumnName="Numero_Montage_Previsionnel" />
+                <ScalarProperty Name="Date_Pass_Prev_Out_Suiv" ColumnName="Date_Pass_Prev_Out_Suiv" />
+                <ScalarProperty Name="Code_Client_Destinataire_Livra" ColumnName="Code_Client_Destinataire_Livra" />
+                <ScalarProperty Name="Client_Destinataire_Livraison" ColumnName="Client_Destinataire_Livraison" />
+                <ScalarProperty Name="Code_Client_Destinataire_Techn" ColumnName="Code_Client_Destinataire_Techn" />
+                <ScalarProperty Name="Client_Destinataire_Technique" ColumnName="Client_Destinataire_Technique" />
+                <ScalarProperty Name="Code_Client_Utilisateur" ColumnName="Code_Client_Utilisateur" />
+                <ScalarProperty Name="Client_Utilisateur" ColumnName="Client_Utilisateur" />
+                <ScalarProperty Name="Halle_Montataire" ColumnName="Halle_Montataire" />
+                <ScalarProperty Name="Top_Emballage" ColumnName="Top_Emballage" />
+                <ScalarProperty Name="Qualite_Metal" ColumnName="Qualite_Metal" />
+                <ScalarProperty Name="Date_Entree_Magasin" ColumnName="Date_Entree_Magasin" />
+                <ScalarProperty Name="Date_Sortie_Magasin" ColumnName="Date_Sortie_Magasin" />
+                <ScalarProperty Name="Date_Remise_Fabrication" ColumnName="Date_Remise_Fabrication" />
+                <ScalarProperty Name="Date_Chargement" ColumnName="Date_Chargement" />
+                <ScalarProperty Name="Date_Expedition" ColumnName="Date_Expedition" />
+                <ScalarProperty Name="Date_Inventaire" ColumnName="Date_Inventaire" />
+                <ScalarProperty Name="Delai_Expedition_Previsionnel" ColumnName="Delai_Expedition_Previsionnel" />
+                <ScalarProperty Name="Numero_Instruction" ColumnName="Numero_Instruction" />
+                <ScalarProperty Name="Type_Instruction" ColumnName="Type_Instruction" />
+                <ScalarProperty Name="Date_Chargement_Plus_Tot" ColumnName="Date_Chargement_Plus_Tot" />
+                <ScalarProperty Name="Date_Chargement_Plus_Tard" ColumnName="Date_Chargement_Plus_Tard" />
+                <ScalarProperty Name="Date_Livraison_Imperative" ColumnName="Date_Livraison_Imperative" />
+                <ScalarProperty Name="Urgence_Instruction" ColumnName="Urgence_Instruction" />
+                <ScalarProperty Name="Date_Urgence_Rouge" ColumnName="Date_Urgence_Rouge" />
+                <ScalarProperty Name="Famille_Emballage" ColumnName="Famille_Emballage" />
+                <ScalarProperty Name="Code_Emballage" ColumnName="Code_Emballage" />
+                <ScalarProperty Name="Code_Prestataire" ColumnName="Code_Prestataire" />
+                <ScalarProperty Name="Mode_Expedition" ColumnName="Mode_Expedition" />
+                <ScalarProperty Name="Nuance_Acier" ColumnName="Nuance_Acier" />
+                <ScalarProperty Name="Diametre_Exterieur_Theorique" ColumnName="Diametre_Exterieur_Theorique" />
+                <ScalarProperty Name="Poids_Theorique" ColumnName="Poids_Theorique" />
+                <ScalarProperty Name="Ticket_Bascule" ColumnName="Ticket_Bascule" />
+                <ScalarProperty Name="Longueur_Paquet" ColumnName="Longueur_Paquet" />
+                <ScalarProperty Name="Nombre_Feuille_Barre" ColumnName="Nombre_Feuille_Barre" />
+                <ScalarProperty Name="Indicateur_HR_THR" ColumnName="Indicateur_HR_THR" />
+                <ScalarProperty Name="Outil_Precedent" ColumnName="Outil_Precedent" />
+                <ScalarProperty Name="Outil_Suivant" ColumnName="Outil_Suivant" />
+                <ScalarProperty Name="Halle_ID_Destination" ColumnName="Halle_ID_Destination" />
+                <ScalarProperty Name="Urgence_Transport_CID_GPO" ColumnName="Urgence_Transport_CID_GPO" />
+                <ScalarProperty Name="Halle_OG" ColumnName="Halle_OG" />
+                <ScalarProperty Name="Localisation_OG" ColumnName="Localisation_OG" />
+                <ScalarProperty Name="Gerbabilite_Matiere" ColumnName="Gerbabilite_Matiere" />
+                <ScalarProperty Name="Indicateur_Expediabilite" ColumnName="Indicateur_Expediabilite" />
+                <ScalarProperty Name="UM_Huilee" ColumnName="UM_Huilee" />
+                <ScalarProperty Name="Outil_Suivant_nplus1" ColumnName="Outil_Suivant_nplus1" />
+                <ScalarProperty Name="Urgence_Expedition" ColumnName="Urgence_Expedition" />
+                <ScalarProperty Name="CodeProduit" ColumnName="CodeProduit" />
+                <ScalarProperty Name="Motif_Securite_Violee" ColumnName="Motif_Securite_Violee" />
+                <ScalarProperty Name="DemandeDeDelestage" ColumnName="DemandeDeDelestage" />
+                <ScalarProperty Name="Localisation_Pour_OG" ColumnName="Localisation_Pour_OG" />
+                <ScalarProperty Name="Date_Passage_Outil_Suivant" ColumnName="Date_Passage_Outil_Suivant" />
+                <ScalarProperty Name="Hauteur" ColumnName="Hauteur" />
+                <ScalarProperty Name="Gerbabilite_Autorisee" ColumnName="Gerbabilite_Autorisee" />
+                <ScalarProperty Name="X_Min_Occupation_Produit" ColumnName="X_Min_Occupation_Produit" />
+                <ScalarProperty Name="X_Max_Occupation_Produit" ColumnName="X_Max_Occupation_Produit" />
+                <ScalarProperty Name="Y_Min_Occupation_Produit" ColumnName="Y_Min_Occupation_Produit" />
+                <ScalarProperty Name="Y_Max_Occupation_Produit" ColumnName="Y_Max_Occupation_Produit" />
+                <ScalarProperty Name="X_Min_Zone_Securite" ColumnName="X_Min_Zone_Securite" />
+                <ScalarProperty Name="X_Max_Zone_Securite" ColumnName="X_Max_Zone_Securite" />
+                <ScalarProperty Name="Y_Min_Zone_Securite" ColumnName="Y_Min_Zone_Securite" />
+                <ScalarProperty Name="Y_Max_Zone_Securite" ColumnName="Y_Max_Zone_Securite" />
+                <ScalarProperty Name="X_Min_Zone_Accessibilite" ColumnName="X_Min_Zone_Accessibilite" />
+                <ScalarProperty Name="X_Max_Zone_Accessibilite" ColumnName="X_Max_Zone_Accessibilite" />
+                <ScalarProperty Name="Y_Min_Zone_Accessibilite" ColumnName="Y_Min_Zone_Accessibilite" />
+                <ScalarProperty Name="Y_Max_Zone_Accessibilite" ColumnName="Y_Max_Zone_Accessibilite" />
+                <ScalarProperty Name="Urgence_Local_Flux" ColumnName="Urgence_Local_Flux" />
+                <ScalarProperty Name="Hall_ID_Flux_Majeur" ColumnName="Hall_ID_Flux_Majeur" />
+                <ScalarProperty Name="Hall_ID_Flux_Mineur" ColumnName="Hall_ID_Flux_Mineur" />
+                <ScalarProperty Name="ZL_ID_Flux_Majeur" ColumnName="ZL_ID_Flux_Majeur" />
+                <ScalarProperty Name="ZL_ID_Flux_Mineur" ColumnName="ZL_ID_Flux_Mineur" />
+                <ScalarProperty Name="Date_Execution_Demandee_Flux" ColumnName="Date_Execution_Demandee_Flux" />
+                <ScalarProperty Name="Hall_ID_Delestage" ColumnName="Hall_ID_Delestage" />
+                <ScalarProperty Name="Date_Execution_Demandee_Delest" ColumnName="Date_Execution_Demandee_Delest" />
+                <ScalarProperty Name="Hall_ID_Rapprochement" ColumnName="Hall_ID_Rapprochement" />
+                <ScalarProperty Name="Date_Execution_Demandee_Rappro" ColumnName="Date_Execution_Demandee_Rappro" />
+                <ScalarProperty Name="TGV" ColumnName="TGV" />
+                <ScalarProperty Name="Emballage_Direct" ColumnName="Emballage_Direct" />
+                <ScalarProperty Name="Poids_Bascule" ColumnName="Poids_Bascule" />
+                <ScalarProperty Name="DH_Derniere_Reception_Fiche" ColumnName="DH_Derniere_Reception_Fiche" />
+                <ScalarProperty Name="Anomalie_OG" ColumnName="Anomalie_OG" />
+                <ScalarProperty Name="DH_Inventaire" ColumnName="DH_Inventaire" />
+                <ScalarProperty Name="LigneMontataire" ColumnName="LigneMontataire" />
+                <ScalarProperty Name="DH_Produit_Froid" ColumnName="DH_Produit_Froid" />
+                <ScalarProperty Name="Type_Produit_Final" ColumnName="Type_Produit_Final" />
+                <ScalarProperty Name="Origine_Exterieure" ColumnName="Origine_Exterieure" />
+                <ScalarProperty Name="DH_Donnees_OG" ColumnName="DH_Donnees_OG" />
+                <ScalarProperty Name="DH_Reception_Emission_Amont" ColumnName="DH_Reception_Emission_Amont" />
+                <ScalarProperty Name="DH_Reception_Emission_Aval" ColumnName="DH_Reception_Emission_Aval" />
+                <ScalarProperty Name="Nombre_Fiche_Identique" ColumnName="Nombre_Fiche_Identique" />
+                <ScalarProperty Name="Parc" ColumnName="Parc" />
+                <ScalarProperty Name="Urgence_Antares" ColumnName="Urgence_Antares" />
+                <ScalarProperty Name="Indicateur_Emballabilite" ColumnName="Indicateur_Emballabilite" />
+                <ScalarProperty Name="Indicateur_Itochu" ColumnName="Indicateur_Itochu" />
+                <ScalarProperty Name="DH_Prev_Ent_Mag" ColumnName="DH_Prev_Ent_Mag" />
+                <ScalarProperty Name="Indicateur_Cmd_Essai" ColumnName="Indicateur_Cmd_Essai" />
+                <ScalarProperty Name="Indicateur_Def_Manu_DH_Prev_En" ColumnName="Indicateur_Def_Manu_DH_Prev_En" />
+                <ScalarProperty Name="Auteur_Def_Manu_DH_Prev_Ent_Ma" ColumnName="Auteur_Def_Manu_DH_Prev_Ent_Ma" />
+                <ScalarProperty Name="Indicateur_Produit_Emballe" ColumnName="Indicateur_Produit_Emballe" />
+                <ScalarProperty Name="Auteur_Dmd_Urgence_Flux" ColumnName="Auteur_Dmd_Urgence_Flux" />
+                <ScalarProperty Name="Forcage_Emission_Fiche" ColumnName="Forcage_Emission_Fiche" />
+                <ScalarProperty Name="Demande_Rep_Deballage" ColumnName="Demande_Rep_Deballage" />
+                <ScalarProperty Name="Type_Rep_Deballage" ColumnName="Type_Rep_Deballage" />
+                <ScalarProperty Name="Axe" ColumnName="Axe" />
+                <ScalarProperty Name="Choix" ColumnName="Choix" />
+                <ScalarProperty Name="LOK" ColumnName="LOK" />
+                <ScalarProperty Name="Nom_Principal_Colis" ColumnName="Nom_Principal_Colis" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="Axe_Client" ColumnName="Axe_Client" />
+                <ScalarProperty Name="Indicateur_Non_Derive" ColumnName="Indicateur_Non_Derive" />
+                <ScalarProperty Name="Dernier_Outil" ColumnName="Dernier_Outil" />
+                <ScalarProperty Name="DH_Sortie_Dernier_Outil" ColumnName="DH_Sortie_Dernier_Outil" />
+                <ScalarProperty Name="Indicateur_Reetiquetage" ColumnName="Indicateur_Reetiquetage" />
+                <ScalarProperty Name="DH_Dmd_Reetiquetage" ColumnName="DH_Dmd_Reetiquetage" />
+                <ScalarProperty Name="AuteurUrgenceFlux" ColumnName="AuteurUrgenceFlux" />
+                <ScalarProperty Name="DHUrgenceFlux" ColumnName="DHUrgenceFlux" />
+                <ScalarProperty Name="ZL_IdDestinationHalleMajeur" ColumnName="ZL_IdDestinationHalleMajeur" />
+                <ScalarProperty Name="Date_Pass_Prev_Out_Suiv_OG" ColumnName="Date_Pass_Prev_Out_Suiv_OG" />
+                <ScalarProperty Name="Indicateur_Def_Manu_Date_Passa" ColumnName="Indicateur_Def_Manu_Date_Passa" />
+                <ScalarProperty Name="Auteur_Def_Manu_Date_Passage_P" ColumnName="Auteur_Def_Manu_Date_Passage_P" />
+                <ScalarProperty Name="NumPlan" ColumnName="NumPlan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
