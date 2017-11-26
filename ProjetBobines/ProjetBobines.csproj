@@ -215,11 +215,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Produit.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Produit.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Produit.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Produit.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -329,7 +324,9 @@
     <Content Include="Views\Produits\Edit.aspx" />
     <Content Include="Views\Produits\ProduitsConsultation.aspx" />
     <Content Include="Views\Produits\ProduitsConsultation2.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -370,6 +367,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ProduitArchi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

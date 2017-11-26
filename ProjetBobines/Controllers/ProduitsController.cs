@@ -42,7 +42,7 @@ namespace ProjetBobines.Controllers
 
         //
         // GET: /Produits/Create
-
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -50,9 +50,7 @@ namespace ProjetBobines.Controllers
 
         //
         // POST: /Produits/Create
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [AcceptVerbs(HttpVerbs.Post), Authorize]
         public ActionResult Create(DimProduit dimproduit)
         {
             if (ModelState.IsValid)
@@ -67,7 +65,7 @@ namespace ProjetBobines.Controllers
 
         //
         // GET: /Produits/Edit/5
-
+        [Authorize(Roles = "modificateur")]
         public ActionResult Edit(int id = 0)
         {
             DimProduit dimproduit = _db.DimProduit.Find(id);
@@ -80,9 +78,7 @@ namespace ProjetBobines.Controllers
 
         //
         // POST: /Produits/Edit/5
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [AcceptVerbs(HttpVerbs.Post), Authorize]
         public ActionResult Edit(DimProduit dimproduit)
         {
             if (ModelState.IsValid)
@@ -96,7 +92,7 @@ namespace ProjetBobines.Controllers
 
         //
         // GET: /Produits/Delete/5
-
+        [Authorize(Roles="admin")]
         public ActionResult Delete(int id = 0)
         {
             DimProduit dimproduit = _db.DimProduit.Find(id);
@@ -109,7 +105,6 @@ namespace ProjetBobines.Controllers
 
         //
         // POST: /Produits/Delete/5
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -30,7 +30,7 @@
             <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
             <ul>
                 <li><%: Html.ActionLink("Produits", "ProduitsConsultation", "Produits") %></li>
-                <li><%: Html.ActionLink("Produits2", "ProduitsConsultation2", "Produits") %></li>
+                <li><%: Html.ActionLink("ProduitsArchi", "Index", "ProduitArchi") %></li>
            </ul>
         </li>
 

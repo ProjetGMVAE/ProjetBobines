@@ -66,6 +66,7 @@
     <p>
         <input type="submit" value="Delete" /> |
         <%: Html.ActionLink("Back to List", "Index") %>
+
     </p>
 <% } %>
 
