@@ -39,7 +39,7 @@ namespace ProjetBobines.Controllers
 
         //
         // GET: /ProduitArchi/Create
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "createur,admin")]
         public ActionResult Create()
         {
             return View();
@@ -64,7 +64,7 @@ namespace ProjetBobines.Controllers
 
         //
         // GET: /ProduitArchi/Edit/5
-        [Authorize(Roles = "modificateur")]
+        [Authorize(Roles = "modificateur,admin")]
         public ActionResult Edit(string id = null)
         {
             Produit produit = db.Produit.Find(id);

@@ -29,19 +29,17 @@
             <h5>Consulter Bobines</h5>
             <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
             <ul>
-                <li><%: Html.ActionLink("Produits", "ProduitsConsultation", "Produits") %></li>
                 <li><%: Html.ActionLink("ProduitsArchi", "Index", "ProduitArchi") %></li>
            </ul>
         </li>
 
         <li class="two">
-            <h5>Modifier Bobines</h5>
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
+            <h5>Bilans Produits</h5>
+            <a href="http://go.microsoft.com/fwlink/?LinkId=245153">A developper via les rapports SSRS</a>
+            <ul>
+                <li><%: Html.ActionLink("BilansProduits", "Index", "BilansProduits") %></li>
+           </ul>
         </li>
 
-        <li class="three">
-            <h5>Datawarehouse bobines</h5>
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-        </li>
     </ol>
 </asp:Content>

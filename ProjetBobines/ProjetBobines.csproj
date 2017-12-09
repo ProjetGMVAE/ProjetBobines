@@ -35,7 +35,7 @@
     <PublishDatabaseSettings>
       <Objects>
         <ObjectGroup Name="AccesBdd" Order="1" xmlns="">
-          <Destination Path="Data Source=PC-AIMK-DEV-GM\SQLSRVGAE%3bInitial Catalog=DataWareHouse%3bIntegrated Security=True%3bConnect Timeout=30" />
+          <Destination Path="Data Source=PC-AIMK-DEV-GM\SQLSRVLOG%3bInitial Catalog=DataWareHouse%3bIntegrated Security=True%3bConnect Timeout=30" />
           <Object Type="DbFullSql" Enabled="False">
             <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bInitial Catalog=DataWareHouse%3bUser ID=ConnexionDWH%3bPassword=ConnexionDWH%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
             <Source Path="obj\Debug\AutoScripts\AccesBdd_SchemaOnly.sql" Transacted="True" />
@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BilansProduitsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProduitArchiController.cs" />
     <Compile Include="Controllers\ProduitsController.cs" />
@@ -355,6 +356,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\BilansProduits\Index.aspx" />
     <Content Include="Views\ProduitArchi\Create.aspx" />
     <Content Include="Views\ProduitArchi\Delete.aspx" />
     <Content Include="Views\ProduitArchi\Details.aspx" />

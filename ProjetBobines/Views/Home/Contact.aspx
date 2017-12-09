@@ -15,7 +15,7 @@
         </header>
         <p>
             <span class="label">Main:</span>
-            <span>03.28.29.52.13</span>
+            <span>07.80.03.15.57</span>
         </p>
     </section>
 
@@ -25,7 +25,7 @@
         </header>
         <p>
             <span class="label">Support:</span>
-            <span><a href="gaetan.manier@arcelormittal.com">gaetan.manier@arcelormittal.com</a></span>
+            <span><a href="gaetan.manier@sfr.fr">gaetan.manier@sfr.fr</a></span>
         </p>
     </section>
 
@@ -34,8 +34,7 @@
             <h3>Address:</h3>
         </header>
         <p>
-            ArcelorMittal<br />
-            Site de Mardyck
-        </p>
+            Morbecque<br />
+         </p>
     </section>
 </asp:Content>
