@@ -3,8 +3,8 @@
   <Name>DataWareHouse</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-  <ConnectionString>Provider=SQLNCLI11.1;Data Source=PC-AIMK-DEV-GM\SQLSRVGAE;Integrated Security=SSPI;Initial Catalog=DataWareHouse</ConnectionString>
-  <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
+  <ConnectionString>Provider=SQLNCLI11.1;Data Source=PC-AIMK-DEV-GM\SQLSRVLOG;Persist Security Info=True;Password=;User ID=;Initial Catalog=DataWareHouse</ConnectionString>
+  <ConnectionStringSecurity>PasswordRemoved</ConnectionStringSecurity>
   <ImpersonationInfo>
     <ImpersonationMode>ImpersonateServiceAccount</ImpersonationMode>
     <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>

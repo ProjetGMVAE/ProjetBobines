@@ -8,48 +8,36 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>StockProduit.cube</Name>
-      <FullPath>StockProduit.cube</FullPath>
+      <Name>Data Ware House.cube</Name>
+      <FullPath>Data Ware House.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>StockProduit.partitions</Name>
-          <FullPath>StockProduit.partitions</FullPath>
+          <Name>Data Ware House.partitions</Name>
+          <FullPath>Data Ware House.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>DimProduit.dim</Name>
-      <FullPath>DimProduit.dim</FullPath>
+      <Name>Dim Client.dim</Name>
+      <FullPath>Dim Client.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Heure.dim</Name>
-      <FullPath>Heure.dim</FullPath>
+      <Name>Dim Halle.dim</Name>
+      <FullPath>Dim Halle.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DimClient.dim</Name>
-      <FullPath>DimClient.dim</FullPath>
+      <Name>Dim Date Temporelle.dim</Name>
+      <FullPath>Dim Date Temporelle.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DimHalle.dim</Name>
-      <FullPath>DimHalle.dim</FullPath>
+      <Name>Dim Produit.dim</Name>
+      <FullPath>Dim Produit.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Date Temporelle.dim</Name>
-      <FullPath>Date Temporelle.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Halle.dim</Name>
-      <FullPath>Halle.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Produit.dim</Name>
-      <FullPath>Produit.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Client.dim</Name>
-      <FullPath>Client.dim</FullPath>
+      <Name>Fact Stock Produit.dim</Name>
+      <FullPath>Fact Stock Produit.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -60,12 +48,8 @@
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
-      <Name>StockProduit.dsv</Name>
-      <FullPath>StockProduit.dsv</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>ProjetBobinesPMD.dsv</Name>
-      <FullPath>ProjetBobinesPMD.dsv</FullPath>
+      <Name>Data Ware House.dsv</Name>
+      <FullPath>Data Ware House.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>
@@ -76,14 +60,14 @@
           <ConfigurationSetting>
             <Id>DataWareHouse</Id>
             <Name>DataWareHouse</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=PC-AIMK-DEV-GM\SQLSRVGAE;Integrated Security=SSPI;Initial Catalog=DataWareHouse</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=PC-AIMK-DEV-GM\SQLSRVLOG;Persist Security Info=True;Password=;User ID=;Initial Catalog=DataWareHouse</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>DataWareHouse</Id>
             <Name>DataWareHouse</Name>
-            <Value xsi:type="xsd:int">0</Value>
+            <Value xsi:type="xsd:int">1</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
         <DeploymentServerVersion>11.0</DeploymentServerVersion>
