@@ -35,6 +35,7 @@
     <None Include="App.config" />
     <None Include="Dossier Projet VAE Gaetan Manier.docx" />
     <None Include="packages.config" />
+    <None Include="Rapport excel Cube Produit.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
