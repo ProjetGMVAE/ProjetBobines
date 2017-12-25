@@ -21,6 +21,18 @@
       <Name>ReportPoidsProduitParc2017.rdl</Name>
       <FullPath>ReportPoidsProduitParc2017.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>ReportStock2017.rdl</Name>
+      <FullPath>ReportStock2017.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ReportStock2015.rdl</Name>
+      <FullPath>ReportStock2015.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ReportStock2016.rdl</Name>
+      <FullPath>ReportStock2016.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
