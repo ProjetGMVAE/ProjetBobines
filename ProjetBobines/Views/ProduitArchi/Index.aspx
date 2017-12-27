@@ -74,9 +74,9 @@ table td, table th
             <%: Html.DisplayFor(modelItem => item.Date_Creation) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new {  id=item.D_NUM_PRODUIT  }) %> |
-            <%: Html.ActionLink("Details", "Details", item) %> |
-            <%: Html.ActionLink("Delete", "Delete", new {  id=item.D_NUM_PRODUIT  }) %>
+            <%: Html.ActionLink("Edit", "Edit", new { id=item.D_NUM_PRODUIT.Trim() }) %> |
+            <%: Html.ActionLink("Details", "Details", new {  id=item.D_NUM_PRODUIT.Trim()  }) %> |
+            <%: Html.ActionLink("Delete", "Delete", new {  id=item.D_NUM_PRODUIT.Trim()  }) %>
         </td>
     </tr>
 <% } %>
