@@ -10,7 +10,7 @@ using ProjetBobines.Models;
 
 namespace ProjetBobines.Controllers
 {
-    public class ProduitArchiController : Controller
+    public class ESSAIController : Controller
     {
         private DataWareHouseEntitiesProduitArchi db = new DataWareHouseEntitiesProduitArchi();
 
@@ -19,24 +19,22 @@ namespace ProjetBobines.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-           // retourne par defaut l'ensemble des enregistrement mais pb car depassement de la taille memoire avec +65000 enreg
+            //instantiate the produit repository
+            var produitRepository = new ProduitRepository();
+            var prodcutCategories = produitRepository.SelectAllProduit();
+
+            // retourne par defaut l'ensemble des enregistrement mais pb car depassement de la taille memoire avec +65000 enreg
             //return View(db.Produit.ToList());
-            
+
             // retour la liste des produits de type produit = benne  on peut faire de meme avec les autres types
             // mais depassement de la memoire avec les bobines
             //return View(db.Produit.Where(a => a.Type_Produit_ID.Contains("Benne")));
 
             // retour la liste des produits de type produit = benne et rouleau on peut faire de meme avec les autres types
             // mais depassement de la memoire avec les bobines
-            //var search = new string[] { "Benne",  "Colis" };
-            //return View(db.Produit.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));
+            var search = new string[] { "Benne", "Fardeau", "Colis" };
+            return View(db.Produit.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));
 
-            //instantiate the produit repository
-            var produitRepository = new ProduitRepository();
-            var retour = produitRepository.SelectAllProduit();
-
-            var search = new string[] { "Benne",  "Colis" };
-            return View(retour.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));
         }
 
         //
@@ -126,7 +124,7 @@ namespace ProjetBobines.Controllers
             //return View(produit);
 
             var produitRepository = new ProduitRepository();
-            
+
             if (ModelState.IsValid)
             {
                 var retour = produitRepository.UpdateProduit(produit);

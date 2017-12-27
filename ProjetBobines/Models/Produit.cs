@@ -11,7 +11,9 @@ namespace ProjetBobines.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web;
+    using System.Web.Mvc;
+
     public partial class Produit
     {
         public string D_NUM_PRODUIT { get; set; }
@@ -175,5 +177,13 @@ namespace ProjetBobines.Models
         public string Indicateur_Def_Manu_Date_Passa { get; set; }
         public string Auteur_Def_Manu_Date_Passage_P { get; set; }
         public string NumPlan { get; set; }
+
+        //public IEnumerable<string> SelectedProduit { get; set; }
+        //public IEnumerable<SelectListItem> Produits { get; set; }
+        //public int SelectedValue { get; set; }
+
     }
+
+     
+
 }

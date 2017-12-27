@@ -6,4 +6,3 @@
 //    Les modifications manuelles apportées à ce fichier sont remplacées si le code est régénéré.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
