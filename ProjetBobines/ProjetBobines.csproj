@@ -365,6 +365,7 @@
     <Content Include="Views\ProduitArchi\Details.aspx" />
     <Content Include="Views\ProduitArchi\Edit.aspx" />
     <Content Include="Views\ProduitArchi\Index.aspx" />
+    <Content Include="Views\ProduitArchi\Index2.aspx" />
     <Content Include="Views\Produits\Create.aspx" />
     <Content Include="Views\Produits\Delete.aspx" />
     <Content Include="Views\Produits\Details.aspx" />

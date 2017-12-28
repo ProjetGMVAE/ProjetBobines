@@ -20,7 +20,7 @@ namespace ProjetBobines.Models
             var productCategoryList = SelectAllProduit();
 
             return (from p in productCategoryList
-                    where (p.D_NUM_PRODUIT.Trim() == id)
+                    where (p.D_NUM_PRODUIT.Trim() == id.Trim())
                     select p).FirstOrDefault();
 
         }
@@ -32,7 +32,7 @@ namespace ProjetBobines.Models
 
         public Produit DeleteProduit(string id)
         {
-            Produit produit = db.Produit.Find(id);
+            Produit produit = db.Produit.Find(id.Trim());
             db.Produit.Remove(produit);
             db.SaveChanges();
 

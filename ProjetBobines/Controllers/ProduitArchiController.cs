@@ -35,26 +35,34 @@ namespace ProjetBobines.Controllers
             var produitRepository = new ProduitRepository();
             var retour = produitRepository.SelectAllProduit();
 
-            var search = new string[] { "Benne",  "Colis" };
-            return View(retour.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));
+            var search = new string[] { "Benne", "Colis" };
+            return View(retour.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));                
         }
 
         //
-        // GET: /ProduitArchi/Details/5
-        //public ActionResult Details(Produit p)
-        //{
-        //    return View(p);
-        //}
+        // GET: /ProduitArchi/
+        [HttpGet]
+        public ActionResult Index2()
+        {
+            //instantiate the produit repository
+            var produitRepository = new ProduitRepository();
+            var retour = produitRepository.SelectAllProduit();
+
+            var search = new string[] { "Benne", "Colis" };
+
+            ViewBag.D_NUM_PRODUIT = new SelectList(retour.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))).AsEnumerable(), "D_NUM_PRODUIT", "D_NUM_PRODUIT", 3);
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(string id)
+        {
+            return View();
+        }
 
         public ActionResult Details(string id = null)
         {
-            //Produit produit = db.Produit.Find(id);
-            //if (produit == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //return View(produit);
-
             //instantiate the produit repository
             var produitRepository = new ProduitRepository();
             var retour = produitRepository.SelectProduit(id);
@@ -92,13 +100,6 @@ namespace ProjetBobines.Controllers
         [Authorize(Roles = "modificateur,admin")]
         public ActionResult Edit(string id = null)
         {
-            //Produit produit = db.Produit.Find(id);
-            //if (produit == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //return View(produit);
-
             //instantiate the produit repository
             var produitRepository = new ProduitRepository();
             var retour = produitRepository.SelectProduit(id);
@@ -117,14 +118,6 @@ namespace ProjetBobines.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Produit produit)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Entry(produit).State = EntityState.Modified;
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-            //return View(produit);
-
             var produitRepository = new ProduitRepository();
             
             if (ModelState.IsValid)
@@ -141,13 +134,6 @@ namespace ProjetBobines.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Delete(string id = null)
         {
-            //Produit produit = db.Produit.Find(id);
-            //if (produit == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //return View(produit);
-
             //instantiate the produit repository
             var produitRepository = new ProduitRepository();
             var retour = produitRepository.SelectProduit(id);
@@ -166,11 +152,6 @@ namespace ProjetBobines.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            //Produit produit = db.Produit.Find(id);
-            //db.Produit.Remove(produit);
-            //db.SaveChanges();
-            //return RedirectToAction("Index");
-
             //instantiate the produit repository
             var produitRepository = new ProduitRepository();
             var retour = produitRepository.DeleteProduit(id);
@@ -182,6 +163,26 @@ namespace ProjetBobines.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        [HttpPost]
+        public ActionResult Index2(String NumProduit, string command)
+        {
+
+            if (command.Equals("Edit"))
+            {
+                return RedirectToAction("Edit", new { id = NumProduit });
+            }
+            if (command.Equals("Delete"))
+            {
+                return RedirectToAction("Delete", new { id = NumProduit });
+            }
+            else
+            {
+                return RedirectToAction("Detail", "ProduitArchi", new { id = NumProduit });
+            }
+
+            return View();
         }
     }
 }

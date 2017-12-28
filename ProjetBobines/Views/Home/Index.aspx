@@ -28,7 +28,10 @@
         <li class="one">
             <h5>Consulter Bobines</h5>
             <ul>
-                 <li><%: Html.ActionLink("ProduitsArchi", "Index", "ProduitArchi") %></li>
+                 <li><%: Html.ActionLink("Liste des Produits (Bennes, Colis)", "Index", "ProduitArchi") %></li>
+           </ul>
+            <ul>
+                 <li><%: Html.ActionLink("Actions sur les produits", "Index2", "ProduitArchi") %></li>
            </ul>
         </li>
 
