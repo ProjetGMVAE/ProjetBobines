@@ -10,20 +10,16 @@
   <DataSets />
   <Reports>
     <ProjectItem>
-      <Name>ReportPoidsProduitParc2016.rdl</Name>
-      <FullPath>ReportPoidsProduitParc2016.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>ReportPoidsProduitParc2015.rdl</Name>
       <FullPath>ReportPoidsProduitParc2015.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ReportPoidsProduitParc2017.rdl</Name>
-      <FullPath>ReportPoidsProduitParc2017.rdl</FullPath>
+      <Name>ReportPoidsProduitParc2016.rdl</Name>
+      <FullPath>ReportPoidsProduitParc2016.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ReportStock2017.rdl</Name>
-      <FullPath>ReportStock2017.rdl</FullPath>
+      <Name>ReportPoidsProduitParc2017.rdl</Name>
+      <FullPath>ReportPoidsProduitParc2017.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>ReportStock2015.rdl</Name>
@@ -33,6 +29,10 @@
       <Name>ReportStock2016.rdl</Name>
       <FullPath>ReportStock2016.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>ReportStock2017.rdl</Name>
+      <FullPath>ReportStock2017.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
@@ -41,11 +41,11 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://10.0.0.10/Rapports/</TargetServerURL>
-        <TargetFolder>N:\SiteWeb\Consultations\rapports</TargetFolder>
+        <TargetServerURL>http://pc-aimk-dev-gm/BilansProduits</TargetServerURL>
+        <TargetFolder>ProjetBobinesRapport</TargetFolder>
         <TargetDataSourceFolder>Sources de données</TargetDataSourceFolder>
         <OverwriteDataSources>true</OverwriteDataSources>
-        <TargetDatasetFolder>N:\SiteWeb\Consultations\rapports</TargetDatasetFolder>
+        <TargetDatasetFolder>Datasets</TargetDatasetFolder>
         <TargetReportPartFolder>Parties de rapports</TargetReportPartFolder>
         <StartItem>ReportPoidsProduitParc.rdl</StartItem>
       </Options>

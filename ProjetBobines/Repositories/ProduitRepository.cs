@@ -11,12 +11,9 @@ namespace ProjetBobines.Models
 
     public class ProduitRepository
     {
-        /// <summary>
 
-        /// to get product category
         private DataWareHouseEntitiesProduitArchi db = new DataWareHouseEntitiesProduitArchi();
-        /// </summary>
-        /// 
+
         public Produit SelectProduit(string id)
         {
 

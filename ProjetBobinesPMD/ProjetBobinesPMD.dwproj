@@ -35,10 +35,6 @@
       <Name>Dim Produit.dim</Name>
       <FullPath>Dim Produit.dim</FullPath>
     </ProjectItem>
-    <ProjectItem>
-      <Name>Fact Stock Produit.dim</Name>
-      <FullPath>Fact Stock Produit.dim</FullPath>
-    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

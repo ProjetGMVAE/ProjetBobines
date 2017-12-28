@@ -241,7 +241,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProduitArchi.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProduitArchiModels.cs" />
+    <Compile Include="Models\ProduitNumProduit.cs" />
     <Compile Include="Repositories\ProduitRepository.cs" />
     <Compile Include="pp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -414,6 +414,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

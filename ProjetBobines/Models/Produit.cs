@@ -178,10 +178,6 @@ namespace ProjetBobines.Models
         public string Auteur_Def_Manu_Date_Passage_P { get; set; }
         public string NumPlan { get; set; }
 
-        //public IEnumerable<string> SelectedProduit { get; set; }
-        //public IEnumerable<SelectListItem> Produits { get; set; }
-        //public int SelectedValue { get; set; }
-
     }
 
      
