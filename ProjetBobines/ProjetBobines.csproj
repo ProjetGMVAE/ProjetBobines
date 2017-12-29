@@ -203,27 +203,13 @@
     <Compile Include="Controllers\BilansProduitsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProduitArchiController.cs" />
-    <Compile Include="Controllers\ProduitsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\DimProduit.cs">
-      <DependentUpon>Produit.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Produit.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Produit.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Produit.cs">
       <DependentUpon>ProduitArchi.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Produit.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Produit.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ProduitArchi.Context.cs">
       <AutoGen>True</AutoGen>
@@ -306,23 +292,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\Produit.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Produit.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Produit.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Produit.edmx</DependentUpon>
-      <LastGenOutput>Produit.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Produit.edmx.diagram">
-      <DependentUpon>Produit.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\Produit.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Produit.edmx</DependentUpon>
-      <LastGenOutput>Produit.cs</LastGenOutput>
-    </Content>
     <Content Include="ClassDiagram1.cd" />
     <EntityDeploy Include="Models\ProduitArchi.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -364,12 +333,6 @@
     <Content Include="Views\ProduitArchi\Edit.aspx" />
     <Content Include="Views\ProduitArchi\Index.aspx" />
     <Content Include="Views\ProduitArchi\Index2.aspx" />
-    <Content Include="Views\Produits\Create.aspx" />
-    <Content Include="Views\Produits\Delete.aspx" />
-    <Content Include="Views\Produits\Details.aspx" />
-    <Content Include="Views\Produits\Edit.aspx" />
-    <Content Include="Views\Produits\ProduitsConsultation.aspx" />
-    <Content Include="Views\Produits\ProduitsConsultation2.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
