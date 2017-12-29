@@ -201,7 +201,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BilansProduitsController.cs" />
-    <Compile Include="Controllers\ESSAIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProduitArchiController.cs" />
     <Compile Include="Controllers\ProduitsController.cs" />
@@ -241,7 +240,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProduitArchi.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProduitNumProduit.cs" />
     <Compile Include="Repositories\ProduitRepository.cs" />
     <Compile Include="pp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
