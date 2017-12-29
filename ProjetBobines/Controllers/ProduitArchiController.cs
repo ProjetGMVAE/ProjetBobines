@@ -169,6 +169,13 @@ namespace ProjetBobines.Controllers
         public ActionResult Index2(String NumProduit, string command)
         {
 
+            NumProduit = NumProduit.Trim();
+
+            if (NumProduit == "")
+            {
+                return HttpNotFound();
+            }
+
             if (command.Equals("Edit"))
             {
                 return RedirectToAction("Edit", new { id = NumProduit });
@@ -179,7 +186,7 @@ namespace ProjetBobines.Controllers
             }
             else
             {
-                return RedirectToAction("Detail", "ProduitArchi", new { id = NumProduit });
+                return RedirectToAction("Details", new { id = NumProduit });
             }
 
             return View();

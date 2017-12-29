@@ -31,7 +31,7 @@
                  <li><%: Html.ActionLink("Liste des Produits (Bennes, Colis)", "Index", "ProduitArchi") %></li>
            </ul>
             <ul>
-                 <li><%: Html.ActionLink("Actions sur les produits", "Index2", "ProduitArchi") %></li>
+                 <li><%: Html.ActionLink("Rechercher un produit", "Index2", "ProduitArchi") %></li>
            </ul>
         </li>
 
