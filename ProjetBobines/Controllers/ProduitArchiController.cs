@@ -19,7 +19,8 @@ namespace ProjetBobines.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-           // retourne par defaut l'ensemble des enregistrement mais pb car depassement de la taille memoire avec +65000 enreg
+            #region c1
+            // retourne par defaut l'ensemble des enregistrement mais pb car depassement de la taille memoire avec +65000 enreg
             //return View(db.Produit.ToList());
             
             // retour la liste des produits de type produit = benne  on peut faire de meme avec les autres types
@@ -30,6 +31,7 @@ namespace ProjetBobines.Controllers
             // mais depassement de la memoire avec les bobines
             //var search = new string[] { "Benne",  "Colis" };
             //return View(db.Produit.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));
+            #endregion
 
             //instantiate the produit repository
             var produitRepository = new ProduitRepository();
