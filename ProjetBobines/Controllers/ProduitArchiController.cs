@@ -99,6 +99,7 @@ namespace ProjetBobines.Controllers
 
         //
         // GET: /ProduitArchi/Edit/5
+        [HttpGet]
         [Authorize(Roles = "modificateur,admin")]
         public ActionResult Edit(string id = null)
         {
