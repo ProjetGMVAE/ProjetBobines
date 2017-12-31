@@ -12,27 +12,11 @@ namespace ProjetBobines.Controllers
 {
     public class ProduitArchiController : Controller
     {
-        private DataWareHouseEntitiesProduitArchi db = new DataWareHouseEntitiesProduitArchi();
-
         //
         // GET: /ProduitArchi/
         [HttpGet]
         public ActionResult Index()
         {
-            #region c1
-            // retourne par defaut l'ensemble des enregistrement mais pb car depassement de la taille memoire avec +65000 enreg
-            //return View(db.Produit.ToList());
-            
-            // retour la liste des produits de type produit = benne  on peut faire de meme avec les autres types
-            // mais depassement de la memoire avec les bobines
-            //return View(db.Produit.Where(a => a.Type_Produit_ID.Contains("Benne")));
-
-            // retour la liste des produits de type produit = benne et rouleau on peut faire de meme avec les autres types
-            // mais depassement de la memoire avec les bobines
-            //var search = new string[] { "Benne",  "Colis" };
-            //return View(db.Produit.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));
-            #endregion
-
             //instantiate the produit repository
             var produitRepository = new ProduitRepository();
             var retour = produitRepository.SelectAllProduit();
@@ -87,13 +71,13 @@ namespace ProjetBobines.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Produit produit)
         {
+            var produitRepository = new ProduitRepository();
+
             if (ModelState.IsValid)
             {
-                db.Produit.Add(produit);
-                db.SaveChanges();
+                var retour = produitRepository.CreationProduit(produit);
                 return RedirectToAction("Index");
             }
-
             return View(produit);
         }
 
@@ -164,7 +148,7 @@ namespace ProjetBobines.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            //db.Dispose();
             base.Dispose(disposing);
         }
 
