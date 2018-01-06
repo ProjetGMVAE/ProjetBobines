@@ -226,6 +226,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProduitArchi.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\IProduitRepository.cs" />
     <Compile Include="Repositories\ProduitRepository.cs" />
     <Compile Include="pp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

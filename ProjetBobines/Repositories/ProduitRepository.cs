@@ -9,7 +9,7 @@ using ProjetBobines.Models;
 namespace ProjetBobines.Models
 {
 
-    public class ProduitRepository
+    public class ProduitRepository : ProjetBobines.Repositories.IProduitRepository
     {
 
         private DataWareHouseEntitiesProduitArchi db = new DataWareHouseEntitiesProduitArchi();

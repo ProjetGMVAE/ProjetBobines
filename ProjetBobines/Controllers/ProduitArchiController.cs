@@ -7,19 +7,33 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
 using ProjetBobines.Models;
+using ProjetBobines.Repositories;
 
 namespace ProjetBobines.Controllers
 {
     public class ProduitArchiController : Controller
     {
+        // Remplacement du repositorie produit par un interface afin que le code soit moins imbriqué
+        // l'autre intéret est que l'on peut faire des test MOC sans avoir besoin de la source de données par exemple
+        IProduitRepository m_repo;
+
+        public ProduitArchiController()
+        {
+            m_repo = new ProduitRepository();
+        }
+
+        public ProduitArchiController(IProduitRepository repoProduit)
+        {
+            m_repo = repoProduit;
+        }
+
         //
         // GET: /ProduitArchi/
         [HttpGet]
         public ActionResult Index()
         {
-            //instantiate the produit repository
-            var produitRepository = new ProduitRepository();
-            var retour = produitRepository.SelectAllProduit();
+
+            var retour = m_repo.SelectAllProduit();
 
             var search = new string[] { "Benne", "Colis" };
             return View(retour.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));                
@@ -30,9 +44,8 @@ namespace ProjetBobines.Controllers
         [HttpGet]
         public ActionResult Index2()
         {
-            //instantiate the produit repository
-            var produitRepository = new ProduitRepository();
-            var retour = produitRepository.SelectAllProduit();
+            
+            var retour = m_repo.SelectAllProduit();
 
             var search = new string[] { "Benne", "Colis" };
 
@@ -50,8 +63,8 @@ namespace ProjetBobines.Controllers
         public ActionResult Details(string id = null)
         {
             //instantiate the produit repository
-            var produitRepository = new ProduitRepository();
-            var retour = produitRepository.SelectProduit(id);
+            //var produitRepository = new ProduitRepository();
+            var retour = m_repo.SelectProduit(id);
 
             return View(retour);
         }
@@ -71,11 +84,11 @@ namespace ProjetBobines.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Produit produit)
         {
-            var produitRepository = new ProduitRepository();
+            //var produitRepository = new ProduitRepository();
 
             if (ModelState.IsValid)
             {
-                var retour = produitRepository.CreationProduit(produit);
+                var retour = m_repo.CreationProduit(produit);
                 return RedirectToAction("Index");
             }
             return View(produit);
@@ -88,8 +101,8 @@ namespace ProjetBobines.Controllers
         public ActionResult Edit(string id = null)
         {
             //instantiate the produit repository
-            var produitRepository = new ProduitRepository();
-            var retour = produitRepository.SelectProduit(id);
+            //var produitRepository = new ProduitRepository();
+            var retour = m_repo.SelectProduit(id);
 
             if (retour == null)
             {
@@ -105,11 +118,11 @@ namespace ProjetBobines.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Produit produit)
         {
-            var produitRepository = new ProduitRepository();
+            //var produitRepository = new ProduitRepository();
             
             if (ModelState.IsValid)
             {
-                var retour = produitRepository.UpdateProduit(produit);
+                var retour = m_repo.UpdateProduit(produit);
                 return RedirectToAction("Index");
             }
             return View(produit);
@@ -122,8 +135,8 @@ namespace ProjetBobines.Controllers
         public ActionResult Delete(string id = null)
         {
             //instantiate the produit repository
-            var produitRepository = new ProduitRepository();
-            var retour = produitRepository.SelectProduit(id);
+            //var produitRepository = new ProduitRepository();
+            var retour = m_repo.SelectProduit(id);
 
             if (retour == null)
             {
@@ -140,8 +153,8 @@ namespace ProjetBobines.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             //instantiate the produit repository
-            var produitRepository = new ProduitRepository();
-            var retour = produitRepository.DeleteProduit(id);
+            //var produitRepository = new ProduitRepository();
+            var retour = m_repo.DeleteProduit(id);
 
             return RedirectToAction("Index");
         }
