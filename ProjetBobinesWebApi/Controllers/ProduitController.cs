@@ -9,31 +9,40 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using ProjetBobinesWebApi.Models;
+using ProjetBobinesWebApi.Repositories;
 
 namespace ProjetBobinesWebApi.Controllers
 {
     public class ProduitController : ApiController
     {
-        private ConnexionDb db = new ConnexionDb();
+        // Remplacement du repositorie produit par un interface afin que le code soit moins imbriqué
+        // l'autre intéret est que l'on peut faire des test MOC sans avoir besoin de la source de données par exemple
+        IProduitRepository m_repo;
+
+        public ProduitController()
+        {
+            m_repo = new ProduitRepository();
+        }
+
+        public ProduitController(IProduitRepository repoProduit)
+        {
+            m_repo = repoProduit;
+        }
+        //private ConnexionDb db = new ConnexionDb();
 
         // GET api/Produit
         public IEnumerable<Produit> GetProduits()
         {
-            var search = new string[] { "Benne", "Colis" };
+            var retour = m_repo.SelectAllProduit();
 
-            return db.Produit.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))).AsEnumerable();
+            var search = new string[] { "Benne", "Colis" };
+            return (retour.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));    
         }
 
         // GET api/Produit/5
         public Produit GetProduit(string id)
         {
-            Produit produit = db.Produit.Find(id);
-            if (produit == null)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-            }
-
-            return produit;
+            return m_repo.SelectProduit(id);
         }
 
         // PUT api/Produit/5
@@ -49,11 +58,11 @@ namespace ProjetBobinesWebApi.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
 
-            db.Entry(produit).State = EntityState.Modified;
+            var retour = m_repo.UpdateProduit(produit);
 
             try
             {
-                db.SaveChanges();
+                //db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -68,8 +77,7 @@ namespace ProjetBobinesWebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Produit.Add(produit);
-                db.SaveChanges();
+                var retour = m_repo.CreationProduit(produit);
 
                 HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, produit);
                 response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = produit.D_NUM_PRODUIT }));
@@ -84,29 +92,30 @@ namespace ProjetBobinesWebApi.Controllers
         // DELETE api/Produit/5
         public HttpResponseMessage DeleteProduit(string id)
         {
-            Produit produit = db.Produit.Find(id);
-            if (produit == null)
+            var retour = m_repo.SelectProduit(id);
+
+            if (retour == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
 
-            db.Produit.Remove(produit);
+            m_repo.DeleteProduit(id);
 
             try
             {
-                db.SaveChanges();
+                //db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, produit);
+            return Request.CreateResponse(HttpStatusCode.OK, id);
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            //db.Dispose();
             base.Dispose(disposing);
         }
     }
