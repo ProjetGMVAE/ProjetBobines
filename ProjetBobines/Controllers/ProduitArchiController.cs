@@ -189,7 +189,7 @@ namespace ProjetBobines.Controllers
                 return RedirectToAction("Details", new { id = NumProduit });
             }
 
-            return View();
+            //return View();
         }
     }
 }
