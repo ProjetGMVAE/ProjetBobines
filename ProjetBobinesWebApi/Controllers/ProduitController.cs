@@ -39,6 +39,12 @@ namespace ProjetBobinesWebApi.Controllers
             return (retour.Where(a => search.Any(s => a.Type_Produit_ID.Contains(s))));    
         }
 
+        //// GET api/Produit/5
+        //public Produit GetAsync(string id)
+        //{
+        //    return GetProduit(id);
+        //}
+
         // GET api/Produit/5
         public Produit GetProduit(string id)
         {
